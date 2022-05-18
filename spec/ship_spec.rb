@@ -37,6 +37,20 @@ RSpec.describe Ship do
     cruiser.hit
     cruiser.hit
     expect(cruiser.health).to eq(1)
+    expect(cruiser.sunk?).to eq(false)
+  end
+
+  it 'edge case, can sink after health reaches 0 or below' do
+    cruiser = Ship.new("Cruiser", 3)
+    cruiser.hit
+    cruiser.hit
+    cruiser.hit
+    expect(cruiser.health).to eq(0)
+    expect(cruiser.sunk?).to eq(true)
+    
+    cruiser.hit
+    expect(cruiser.health).to eq(-1)
+    expect(cruiser.sunk?).to eq(true)
   end
 
 end
