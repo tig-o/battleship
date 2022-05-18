@@ -10,4 +10,9 @@ class Ship
   def sunk?
     @sunk_status
   end
+
+  def hit
+    @health = @health - 1
+  end
+
 end
