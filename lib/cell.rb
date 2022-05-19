@@ -25,7 +25,11 @@ class Cell
     elsif @fired_upon != false
       true
     end
+  end
 
+  def fire_upon
+    @ship.hit
+    @fired_upon = true
   end
 
 end
