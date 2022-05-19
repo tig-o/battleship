@@ -55,4 +55,14 @@ RSpec.describe Cell do
     cell.place_ship(cruiser)
     expect(cell.fired_upon?).to eq(false)
   end
+
+  it "can be fired upon and lose health" do
+    cell = Cell.new("B4")
+    cruiser = Ship.new("Cruiser", 3)
+    cell.place_ship(cruiser)
+    cell.fire_upon
+    expect(cell.ship.health).to eq(2)
+    expect(cell.fired_upon?).to eq(true)
+  end
+
 end
