@@ -1,20 +1,15 @@
 class Cell
   attr_reader :coordinate, :ship
   def initialize(grid_coordinate)
-
-      @coordinate = grid_coordinate
-      @is_empty = true
-      ship = [] 
+    @coordinate = grid_coordinate
+    @ship = nil # created a path and forcing it to be nil by default
   end
 
   def empty?
-      @is_empty
+    if @ship == nil
+      true
+    end
   end
-
-  def place_ship(ship)
-
-  end
-
 
 
 end
