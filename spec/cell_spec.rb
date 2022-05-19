@@ -18,5 +18,10 @@ RSpec.describe Cell do
     expect(cell.ship).to eq(nil)
   end
 
+  it "can be empty" do
+    cell = Cell.new("B4")
+    expect(cell.empty).to eq(true)
+  end
+
 
 end
