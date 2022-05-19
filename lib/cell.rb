@@ -8,8 +8,13 @@ class Cell
   def empty?
     if @ship == nil
       true
+    elsif @ship != nil
+      false
     end
   end
 
+  def place_ship(instance_of_ship)
+    @ship = instance_of_ship # storing object in ship variable
+  end
 
 end
