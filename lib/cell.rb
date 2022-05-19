@@ -1,7 +1,8 @@
 class Cell
+  attr_reader :coordinate
+  def initialize(grid_coordinate)
 
-  def initialize(cell)
-
+      @coordinate = grid_coordinate
 
 
 
