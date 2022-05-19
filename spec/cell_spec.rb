@@ -20,8 +20,16 @@ RSpec.describe Cell do
 
   it "can be empty" do
     cell = Cell.new("B4")
-    expect(cell.empty).to eq(true)
+    expect(cell.empty?).to eq(true)
   end
 
+  it "can occupy cell with a ship" do
+    cell = Cell.new("B4")
+    cruiser = Ship.new("Cruiser", 3)
+
+    
+    expect(cell.ship).to eq(cruiser)
+
+  end
 
 end
