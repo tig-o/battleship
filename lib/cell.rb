@@ -28,8 +28,20 @@ class Cell
   end
 
   def fire_upon
-    @ship.hit
-    @fired_upon = true
+    if empty? == true
+      @fired_upon = true
+    elsif empty? == false
+      @fired_upon = true
+      @ship.hit
+    end
+  end
+
+  def render
+    if @fired_upon == false # the cell has not been fired upon
+      "."
+    elsif @fired_upon == true && @ship == nil # if the cell has been fired upon and it does not contain a ship
+      "M"
+    end
   end
 
 end
