@@ -36,12 +36,17 @@ class Cell
     end
   end
 
-  def render
+  def render # (boolean)
     if @fired_upon == false # the cell has not been fired upon
       "."
     elsif @fired_upon == true && @ship == nil # if the cell has been fired upon and it does not contain a ship
       "M"
+    # elsif boolean == true
+    #   "S"
+    elsif @fired_upon == true && @ship != nil # “H” if the cell has been fired upon and it contains a ship (the shot was a hit).
+      "H"
     end
+
   end
 
 end
