@@ -83,4 +83,18 @@ RSpec.describe Cell do
     expect(cruiser.health).to eq(2)
   end
 
+  it 'can render a cell and return a hit' do
+    cell_2 = Cell.new("C3")
+    cruiser = Ship.new("Cruiser", 3)
+    cell_2.place_ship(cruiser)
+    expect(cell_2.render).to eq(".")
+    cell_2.fire_upon
+    expect(cell_2.render).to eq("H")
+    expect(cruiser.health).to eq(2)
+    expect(cruiser.sunk?).to eq(false)
+    cruiser.hit
+    cruiser.hit
+    expect(cruiser.sunk?).to eq(true)
+    expect(cell_2.render).to eq("X")
+  end
 end
