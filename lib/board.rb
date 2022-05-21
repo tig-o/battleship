@@ -23,5 +23,15 @@ attr_reader :board_hash
     }
   end
 
+  def valid_coordinate?(grid_coordinate)
+    @grid_coordinate = grid_coordinate
+
+    if board_hash.has_key?(@grid_coordinate)
+      true
+    else
+      false
+      end
+    end
+
 
 end
