@@ -43,8 +43,10 @@ class Cell
       "M"
     # elsif boolean == true
     #   "S"
-    elsif @fired_upon == true && @ship != nil # “H” if the cell has been fired upon and it contains a ship (the shot was a hit).
+  elsif @fired_upon == true && @ship != nil && @ship.health != 0# “H” if the cell has been fired upon and it contains a ship (the shot was a hit).
       "H"
+    elsif @fired_upon == true && @ship != nil && @ship.health ==0
+      "X"
     end
 
   end
