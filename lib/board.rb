@@ -30,8 +30,16 @@ attr_reader :board_hash
       true
     else
       false
-      end
     end
+  end
 
+  def valid_placement?(ship, coordinate_array)
+    valid_length = coordinate_array.size
+    if valid_length == ship.length
+      true
+    else
+      false
+    end
+  end
 
 end
