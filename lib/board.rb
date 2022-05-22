@@ -34,12 +34,72 @@ attr_reader :board_hash
   end
 
   def valid_placement?(ship, coordinate_array)
-    valid_length = coordinate_array.size
-    if valid_length == ship.length
+    @valid_length = coordinate_array.size
+    if @valid_length == ship.length
       true
     else
       false
     end
+
+
+
+        # if coordinate_array[0][0] == coordinate_array[1][0] == coordinate_array[2][0] && coordinate_array[0][0] +2 == coordinate_array[1][1] + 1 == coordinate_array[2][1]
+        #       true
+        #     elsif coordinate_array[0][0] + 2 == coordinate_array[1][0] +1 == coordinate_array[2][0] && coordinate_array[0][0] == coordinate_array[1][1] == coordinate_array[2][1]
+        #       true
+        #     else false
+        #
+        #
+        # end
+
+
+
+        def letter_eq do
+          if coordinate_array[0][0] == coordinate_array[1][0]  == coordinate_array[2][0]
+            true
+          else
+            false
+          end
+
+
+
+        def letter_ascend do
+          1 = "A"
+          2 = "B"
+          3 = "C"
+          4 = "D"
+          if coordinate_array[0][0] + 2 == coordinate_array[0][1] + 1 == coordinate_array[0][2]
+            true
+          else
+            false
+
+        end
+
+        def num_eq do
+          if coordinate_array[1][0] == coordinate_array[1][1] == coordinate_array[1][2]
+            true
+          else
+            false
+        end
+
+        def num_ascend do
+          if coordinate_array[1][0] + 2 == coordinate_array[1][1] + 1 == coordinate_array[1][2]
+            true
+          else
+            false
+        end
+
+        def eq_ascend_eval do
+          if num_eq == letter_ascend == true
+            true
+          elsif num_ascend == letter_eq == true
+            true
+          else
+            false
+
+
+
+
   end
 
 end
