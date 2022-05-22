@@ -1,5 +1,4 @@
 require './lib/board'
-require 'pry'
 require './lib/cell'
 require './lib/ship'
 
@@ -22,37 +21,34 @@ RSpec.describe Board do
 
   it 'can validate existing coordinates' do
     board = Board.new
-   expect(board.valid_coordinate?("A1")).to eq(true)
-   expect(board.valid_coordinate?("D4")).to eq(true)
-   expect(board.valid_coordinate?("C3")).to eq(true)
+    expect(board.valid_coordinate?("A1")).to eq(true)
+    expect(board.valid_coordinate?("D4")).to eq(true)
+    expect(board.valid_coordinate?("C3")).to eq(true)
   end
 
   it 'can validate nonexisting coordinates' do
     board = Board.new
-   expect(board.valid_coordinate?("A5")).to eq(false)
-   expect(board.valid_coordinate?("E1")).to eq(false)
-   expect(board.valid_coordinate?("A22")).to eq(false)
+    expect(board.valid_coordinate?("A5")).to eq(false)
+    expect(board.valid_coordinate?("E1")).to eq(false)
+    expect(board.valid_coordinate?("A22")).to eq(false)
   end
 
-  xit 'can validate array coordinates against ship length' do
-   board = Board.new
-   cruiser = Ship.new("Cruiser", 3)
-   submarine = Ship.new("Submarine", 2)
-
-   expect(board.valid_placement?(cruiser, ["A1", "A2"])).to eq(false)
-
-   expect(board.valid_placement?(submarine, ["A2", "A3", "A4"])).to eq(false)
- end
+  it 'can validate array coordinates against ship length' do
+    board = Board.new
+    cruiser = Ship.new("Cruiser", 3)
+    submarine = Ship.new("Submarine", 2)
+    expect(board.valid_placement?(cruiser, ["A1", "A2"])).to eq(false)
+    expect(board.valid_placement?(submarine, ["A2", "A3", "A4"])).to eq(false)
+  end
 
  it 'can check that coordiates are valid and all share a number or letter'  do
-   board = Board.new
-   cruiser = Ship.new("Cruiser", 3)
-   submarine = Ship.new("Submarine", 2)
-   expect(board.valid_placement?(cruiser, ["A1", "A2", "A4"])).to eq(false)
-   # expect(board.valid_placement?(submarine, ["A1", "C1"])).to eq(false)
-   # expect(board.valid_placement?(cruiser, ["A3", "A2", "A1"])).to eq(false)
-   # expect(board.valid_placement?(submarine, ["C1", "B1"])).to eq(false)
+    board = Board.new
+    cruiser = Ship.new("Cruiser", 3)
+    submarine = Ship.new("Submarine", 2)
+    # expect(board.valid_placement?(cruiser, ["A1", "A2", "A4"])).to eq(false)
+    # expect(board.valid_placement?(submarine, ["A1", "C1"])).to eq(false)
+    expect(board.valid_placement?(cruiser, ["A3", "A2", "A1"])).to eq(false)
+    # expect(board.valid_placement?(submarine, ["C1", "B1"])).to eq(false)
  end
-
 
 end
