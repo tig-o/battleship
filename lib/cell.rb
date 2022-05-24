@@ -36,7 +36,7 @@ class Cell
     end
   end
 
-  def render # (boolean)
+  def render #BOOLEAN
     if @fired_upon == false # the cell has not been fired upon
       "."
     elsif @fired_upon == true && @ship == nil # if the cell has been fired upon and it does not contain a ship
