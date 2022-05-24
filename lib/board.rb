@@ -35,30 +35,23 @@ class Board
   def valid_placement?(ship, coordinate_array)
     @valid_length = coordinate_array.size
 
-    # if @valid_length == ship.length
-    #   true
-    # elsif @valid_length != ship.length
-    #   false
-    # end
-
-    if @valid_length == 2
-      puts "hello 2"
-      if coordinate_array[0][0] == coordinate_array[1][0] && coordinate_array[0][1].to_i + 1 == coordinate_array[1][1]
+    if ship.length == 2 && @valid_length == ship.length
+      puts "ship length 2"
+      if coordinate_array[0][0] == coordinate_array[1][0] && coordinate_array[0][1].to_i + 1 == coordinate_array[1][1].to_i
         true
       else
         false
       end
-    end
-
-    if @valid_length == 3
-      puts "hello 3"
+    elsif ship.length == 3 && @valid_length == ship.length
+      puts "ship length 3"
       if coordinate_array[0][0] == coordinate_array[1][0] && coordinate_array[1][1].to_i + 1 == coordinate_array[2][1].to_i
         true
       else
         false
       end
+    else
+      false
     end
   end
-
 
 end
