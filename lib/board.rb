@@ -56,5 +56,14 @@ class Board
     else
       false
     end
-    end
   end
+
+  def place(ship, coordinates)
+
+    coordinates.each do |coordinate|
+      @board_hash[coordinate].place_ship(ship)
+    end
+
+  end
+
+end
