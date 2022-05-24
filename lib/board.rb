@@ -33,20 +33,27 @@ class Board
   end
 
   def valid_placement?(ship, coordinate_array)
+
     @valid_length = coordinate_array.size
     @letter_ascend = ["AB", "BC", "CD", "ABC", "BCD"]
     @num_ascend = ["12", "23", "34", "123", "234"]
+    @occupy = coordinate_array.map{|coordinate| @board_hash[coordinate].empty?}
+
 
     if ship.length == 2 && @valid_length == ship.length
-      if coordinate_array[0][1] == coordinate_array[1][1] && @letter_ascend.include?(coordinate_array[0][0] + coordinate_array[1][0])
-        true
+    if @occupy.include?(false) == true
+      false
       elsif coordinate_array[0][0] == coordinate_array[1][0] && @num_ascend.include?(coordinate_array[0][1] + coordinate_array[1][1])
         true
+      elsif coordinate_array[0][1] == coordinate_array[1][1] && @letter_ascend.include?(coordinate_array[0][0] + coordinate_array[1][0])
+          true
       else
         false
       end
     elsif ship.length == 3 && @valid_length == ship.length
-      if coordinate_array[0][1] == coordinate_array[1][1] && coordinate_array[1][1] == coordinate_array[2][1] && @letter_ascend.include?(coordinate_array[0][0] + coordinate_array[1][0] + coordinate_array[2][0])
+      if @occupy.include?(false) == true
+        false
+      elsif coordinate_array[0][1] == coordinate_array[1][1] && coordinate_array[1][1] == coordinate_array[2][1] && @letter_ascend.include?(coordinate_array[0][0] + coordinate_array[1][0] + coordinate_array[2][0])
         true
       elsif coordinate_array[0][0] == coordinate_array[1][0] && coordinate_array[1][0] == coordinate_array[2][0] && @num_ascend.include?(coordinate_array[0][1] + coordinate_array[1][1] + coordinate_array[2][1])
         true
