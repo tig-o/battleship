@@ -25,4 +25,16 @@ class Computer
     @cpu_board.place(cruiser, three_coordinates)
   end
 
+  def place_submarine(sub)
+    two_coordinates = []
+      until @cpu_board.valid_placement?(sub, two_coordinates)
+        1.times do
+          two_coordinates = []
+          two_coordinates << coordinate_generator
+          two_coordinates << coordinate_generator
+        end
+      end
+    @cpu_board.place(sub, two_coordinates)
+  end
+
 end
