@@ -33,5 +33,10 @@ RSpec.describe Computer do
     expect(cpu.place_cruiser(cpu_cruiser)).to be_a(Array)
   end
 
-
+  it 'can place submarine on board and validate placement' do
+    cpu = Computer.new
+    cpu_sub = Ship.new("Submarine", 2)
+    cpu.place_submarine(cpu_sub)
+    expect(cpu.place_submarine(cpu_sub)).to be_a(Array)
+  end
 end
