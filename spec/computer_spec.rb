@@ -8,4 +8,15 @@ RSpec.describe Computer do
     cpu = Computer.new
     expect(cpu).to be_a(Computer)
   end
+
+  it 'can use a board and ships' do
+    cpu_board = Board.new
+    expect(cpu_board).to be_a(Board)
+
+    cpu_sub = Ship.new("Submarine", 2)
+    expect(cpu_sub).to be_a(Ship)
+
+    cpu_cruiser = Ship.new("Cruiser", 3)
+    expect(cpu_cruiser).to be_a(Ship)
+  end
 end
