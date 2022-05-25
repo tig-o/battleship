@@ -20,4 +20,11 @@ RSpec.describe Player do
     player_cruiser = Ship.new("Cruiser", 3)
     expect(player_cruiser).to be_a(Ship)
   end
+
+  xit 'can place submarine on board and validate placement' do
+    player1 = Player.new
+    player1.place_submarine # we can test this when we create our own coordinate inputs
+  end
+
+
 end
