@@ -19,4 +19,10 @@ RSpec.describe Computer do
     cpu_cruiser = Ship.new("Cruiser", 3)
     expect(cpu_cruiser).to be_a(Ship)
   end
+
+  it 'can generate random coordinates' do
+    cpu = Computer.new
+    board = Board.new
+    expect(cpu.coordinate_generator).to be_a(String)
+  end
 end
