@@ -17,4 +17,11 @@ class Player
     end
     @player_board.place(@player_sub, @player_coordinates)
   end
+
+  def place_cruiser
+    until @player_board.valid_placement?(@player_cruiser, @player_coordinates)
+      @coordinate_input
+    end
+    @player_board.place(@player_cruiser, @player_coordinates)
+  end
 end
