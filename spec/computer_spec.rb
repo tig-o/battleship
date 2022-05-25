@@ -26,10 +26,12 @@ RSpec.describe Computer do
     expect(cpu.coordinate_generator).to be_a(String)
   end
 
-  it 'can place ship on board and validate placement' do
+  it 'can place cruiser on board and validate placement' do
     cpu = Computer.new
     cpu_cruiser = Ship.new("Cruiser", 3)
-    # cpu.place_ship(cpu_cruiser)
-    expect(cpu.place_ship(cpu_cruiser)).to be_a(Array)
+    cpu.place_cruiser(cpu_cruiser)
+    expect(cpu.place_cruiser(cpu_cruiser)).to be_a(Array)
   end
+
+
 end
