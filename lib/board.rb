@@ -73,23 +73,29 @@ class Board
 
   end
 
-  def render
+  def render(ship_is_visible = false)
 
-    "   1 2 3 4 \n" +
-    "A  . . . . \n" +
-    "B  . . . . \n" +
-    "C  . . . . \n" +
-    "D  . . . . \n"
+    "  1 2 3 4 \n" +
+    "A #{@board_hash["A1"].render(ship_is_visible)} #{@board_hash["A2"].render(ship_is_visible)} #{@board_hash["A3"].render(ship_is_visible)} #{@board_hash["A4"].render(ship_is_visible)} \n" +
+    "B #{@board_hash["B1"].render(ship_is_visible)} #{@board_hash["B2"].render(ship_is_visible)} #{@board_hash["B3"].render(ship_is_visible)} #{@board_hash["B4"].render(ship_is_visible)} \n" +
+    "C #{@board_hash["C1"].render(ship_is_visible)} #{@board_hash["C2"].render(ship_is_visible)} #{@board_hash["C3"].render(ship_is_visible)} #{@board_hash["C4"].render(ship_is_visible)} \n" +
+    "D #{@board_hash["D1"].render(ship_is_visible)} #{@board_hash["D2"].render(ship_is_visible)} #{@board_hash["D3"].render(ship_is_visible)} #{@board_hash["D4"].render(ship_is_visible)} \n"
 
-    "   1 2 3 4 \n" +
-    "A  . . . . \n" +
-    "B  . . . . \n" +
-    "C  . . . . \n" +
-    "D  . . . . \n"
-
-    {"A1"}
 
   end
 
 
 end
+
+
+# "   1 2 3 4 \n" +
+# "A  . . . . \n" +
+# "B  . . . . \n" +
+# "C  . . . . \n" +
+# "D  . . . . \n"
+#
+# "   1 2 3 4 \n" +
+# "A  . . . . \n" +
+# "B  . . . . \n" +
+# "C  . . . . \n" +
+# "D  . . . . \n"
