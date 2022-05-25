@@ -26,5 +26,8 @@ RSpec.describe Player do
     player1.place_submarine # we can test this when we create our own coordinate inputs
   end
 
-
+  xit 'can place cruiser on board and validate placement' do
+    player1 = Player.new
+    player1.place_cruiser # we can test this when we create our own coordinate inputs
+  end
 end
