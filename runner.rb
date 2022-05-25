@@ -7,11 +7,12 @@ require './lib/computer'
 
 
 
-board = Board.new
-submarine = Ship.new("Submarine", 2)
-cruiser = Ship.new("Cruiser", 3)
-player = Player.new
-cpu = Computer.new
-turn = Turn.new
+  board = Board.new
+  submarine = Ship.new("Submarine", 2)
+  cruiser = Ship.new("Cruiser", 3)
+  player = Player.new
+  cpu = Computer.new
+  turn = Turn.new
 
-turn.start
+  turn.start
+  
