@@ -20,7 +20,22 @@ class Player
 
   def place_cruiser
     until @player_board.valid_placement?(@player_cruiser, @player_coordinates)
-      @coordinate_input
+      puts board.render
+
+      puts "Enter the first cell coordinate for your Cruiser."
+      puts "Coordinates should be added from left to right, and top to bottom"
+
+      player.coordinate_input
+
+      puts "Now enter your second coordinate."
+
+      player.coordinate_input
+
+      puts "Finally enter your final coordinate."
+
+      player.coordinate_input
+
+      # @coordinate_input
     end
     @player_board.place(@player_cruiser, @player_coordinates)
   end
